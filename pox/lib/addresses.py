@@ -446,7 +446,7 @@ class IPAddr6 (_AddrBase):
     """
     Factory that creates an IPAddr6 from a large integer
     """
-    return bytes( (num >> i) & 0xff for i in range(120,-8,-8) )
+    return cls( bytes((num >> i) & 0xff for i in range(120,-8,-8) ), raw=True)
 
   def __init__ (self, addr = None, raw = False, network_order = False):
     """
